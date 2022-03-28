@@ -1,6 +1,8 @@
 package com.examly.springapp.service;
 
-import com.vnaazleen.instrumentDelight.model.CartModel;
+
+
+import com.examly.springapp.model.CartModel;
 
 import java.util.List;
 
