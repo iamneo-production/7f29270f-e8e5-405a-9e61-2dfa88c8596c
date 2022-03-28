@@ -11,13 +11,12 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-// import { NavbarComponent } from './home/navbar/navbar.component';
-// import { ProductdetailsComponent } from './home/productdetails/productdetails.component';
-// import { HomeComponent } from './home/home.component';
-// import { CorouselComponent } from './home/corousel/corousel.component';
-// import { ProductsComponent } from './home/products/products.component';
-// import { HomePageComponent } from './home/home-page/home-page.component';
-// import { CartItemsComponent } from './home/cart-items/cart-items.component';
+import { HomeComponent } from './home/home.component';
+import { HomePageComponent } from './home/home-page/home-page.component';
+import { CorouselComponent } from './home/corousel/corousel.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
+import { ProductdetailsComponent } from './home/productdetails/productdetails.component';
+import { ProductsComponent } from './home/products/products.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +26,12 @@ import { FormsModule } from '@angular/forms';
     ProductEditComponent,
     AdminComponent,
     AdminNavComponent,
-    // NavbarComponent,
-    // ProductdetailsComponent,
-    // HomeComponent,
-    // CorouselComponent,
-    // ProductsComponent,
-    // HomePageComponent,
-    // CartItemsComponent,
+    HomeComponent,
+    HomePageComponent,
+    CorouselComponent,
+    NavbarComponent,
+    ProductdetailsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
