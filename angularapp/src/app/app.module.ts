@@ -17,6 +17,7 @@ import { CorouselComponent } from './home/corousel/corousel.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { ProductdetailsComponent } from './home/productdetails/productdetails.component';
 import { ProductsComponent } from './home/products/products.component';
+import { CartItemsComponent } from './home/cart-items/cart-items.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductsComponent } from './home/products/products.component';
     CorouselComponent,
     NavbarComponent,
     ProductdetailsComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartItemsComponent
   ],
   imports: [
     BrowserModule,

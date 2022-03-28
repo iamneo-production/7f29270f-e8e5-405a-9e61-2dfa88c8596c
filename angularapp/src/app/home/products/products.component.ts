@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Product } from 'src/app/model/Product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  _productList !: Product[];
+  constructor(private _service: ProductService, private _route: Router) { }
 
   ngOnInit(): void {
+    this._service.fetchProductList().subscribe(
+      data=>{
+        this._productList = data;
+        console.log("Response recieved")
+        console.log(data)
+      },
+      error=>console.log("Exception occured")
+    )
   }
 
 }

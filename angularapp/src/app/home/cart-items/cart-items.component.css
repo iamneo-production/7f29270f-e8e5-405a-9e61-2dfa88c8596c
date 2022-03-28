@@ -1,0 +1,8 @@
+thead {
+    background-color: #FF9F45 !important;
+    color: white !important;
+}
+
+th, td {
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table mt-5">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cartItem of _cartItems">
+            <th scope="row">{{cartItem.productName}}</th>
+            <td>{{cartItem.price}}</td>
+            <td>{{cartItem.quantity}}</td>
+            <td><button class="btn btn-danger" (click)="deleteCartItem(cartItem.cartItemID)">Delete</button></td>
+          </tr>
+        </tbody>
+    </table>
+</div>
