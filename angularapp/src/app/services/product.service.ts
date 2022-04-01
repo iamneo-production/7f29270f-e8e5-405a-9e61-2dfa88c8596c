@@ -24,11 +24,11 @@ export class ProductService {
   }
 
   editProduct(product: Product): Observable<any> {
-    return this._http.post<any>("https://8080-feefcaccbcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products", product)
+    return this._http.post<any>("https://8080-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products", product)
   }
 
   deleteProductById(id: number): Observable<any> {
-    return this._http.delete<any>("https://8080-feefcaccbcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products/" + id)
+    return this._http.delete<any>("https://8080-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products/" + id)
   }
 
 }

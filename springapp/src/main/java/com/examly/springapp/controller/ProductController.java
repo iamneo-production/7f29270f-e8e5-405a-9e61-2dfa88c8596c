@@ -16,13 +16,13 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("/products")
-    @CrossOrigin(origins = "https://8081-feefcaccbcebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+    @CrossOrigin(origins = "https://8081-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public ProductModel productSave(@RequestBody ProductModel product) {
         return productService.saveProduct(product);
     }
 
     @GetMapping("/products")
-    @CrossOrigin(origins = "https://8081-feefcaccbcebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+    @CrossOrigin(origins = "https://8081-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public List<ProductModel> getProduct() {
         return productService.getAllProducts();
     }

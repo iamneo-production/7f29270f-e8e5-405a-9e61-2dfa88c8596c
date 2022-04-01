@@ -1,41 +1,17 @@
-nav{
-    width:100vw;
-    background-color: rgb(255, 164, 27);
-    overflow: hidden;
-    float: inline-start;
-}
-.navleft span{
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    margin: 1px 16px;
-    text-decoration: none;
-    font-size: 15px;
-}
-.navleft button{
-    background-color: transparent;
-    border: none;
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 1px 16px;
-    margin: 16px 16px;
-    text-decoration: none;
-    font-size: 15px;
+.navbar {
+    background-color: #FF9F45 !important;
 }
 
-.navright button{
-    background-color: transparent;
-    border: none;
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 1px 16px;
-    margin: 16px 16px;
-    text-decoration: none;
-    font-size: 15px;
-}
-.title{
+.navbar-brand {
+    font-size: x-large;
     font-family: cursive;
-} 
+}
+
+.nav-link {
+    font-size: xx-large !important;
+    color: white !important;
+}
+
+.material-icons {
+    font-size: x-large !important;
+}

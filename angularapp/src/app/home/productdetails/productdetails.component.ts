@@ -39,6 +39,9 @@ export class ProductdetailsComponent implements OnInit {
     )
 
     this._router.navigate(["/cart/2"])
+    .then(() => {
+      window.location.reload();
+    });
   }
   PlaceOrder(){
     this._oservice.placeOrder(this.product.quantity,this.id).subscribe(
@@ -48,5 +51,8 @@ export class ProductdetailsComponent implements OnInit {
       error => console.log(error)
     )
     this._router.navigate(["/myorders"])
+    .then(() => {
+      window.location.reload();
+    });
   }
 }
