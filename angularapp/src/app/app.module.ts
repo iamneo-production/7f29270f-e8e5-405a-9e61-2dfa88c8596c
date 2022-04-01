@@ -18,6 +18,7 @@ import { NavbarComponent } from './home/navbar/navbar.component';
 import { ProductdetailsComponent } from './home/productdetails/productdetails.component';
 import { ProductsComponent } from './home/products/products.component';
 import { CartItemsComponent } from './home/cart-items/cart-items.component';
+import { OrdersComponent } from './home/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CartItemsComponent } from './home/cart-items/cart-items.component';
     NavbarComponent,
     ProductdetailsComponent,
     ProductsComponent,
-    CartItemsComponent
+    CartItemsComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

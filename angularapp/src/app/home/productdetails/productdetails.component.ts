@@ -1,3 +1,6 @@
+import { OrderService } from './../../services/order.service';
+import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
+import { SimplePlaceholderMapper } from '@angular/compiler/src/i18n/serializers/serializer';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/Product';
@@ -14,7 +17,7 @@ export class ProductdetailsComponent implements OnInit {
   product = new Product()
   id!: number
 
-  constructor(private _router: Router, private _pservice: ProductService, private _cservice: CartService, private _activatedRoute: ActivatedRoute) { }
+  constructor(private _router: Router, private _pservice: ProductService, private _cservice: CartService,private _oservice: OrderService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = Number(this._activatedRoute.snapshot.paramMap.get('id'))
@@ -36,5 +39,14 @@ export class ProductdetailsComponent implements OnInit {
     )
 
     this._router.navigate(["/cart/2"])
+  }
+  PlaceOrder(){
+    this._oservice.placeOrder(this.product.quantity,this.id).subscribe(
+      data =>{
+        console.log("Product " + this.id + " is added to orders")
+      },
+      error => console.log(error)
+    )
+    this._router.navigate(["/myorders"])
   }
 }

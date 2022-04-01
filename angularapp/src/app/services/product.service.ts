@@ -12,15 +12,15 @@ export class ProductService {
   constructor(private _http: HttpClient) { }
 
   fetchProductList(): Observable<any> {
-    return this._http.get<any>("https://8080-feefcaccbcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products")
+    return this._http.get<any>("https://8080-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products")
   }
 
   fetchProductById(id: Number): Observable<any> {
-    return this._http.get<any>("https://8080-feefcaccbcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products/" + id)
+    return this._http.get<any>("https://8080-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products/" + id)
   }
 
   addProduct(product: Product): Observable<any> {
-    return this._http.post<any>("https://8080-feefcaccbcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products", product)
+    return this._http.post<any>("https://8080-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/products", product)
   }
 
   editProduct(product: Product): Observable<any> {
