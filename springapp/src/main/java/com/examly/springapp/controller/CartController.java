@@ -15,19 +15,19 @@ public class CartController {
     private CartService cartService;
 
     @PostMapping("/home/{id}")
-    @CrossOrigin(origins = "https://8081-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+   @CrossOrigin(origins = "http://localhost:4200/")
     public CartModel addToCart(@RequestBody int quantity, @PathVariable Long id) {
         return cartService.addToCart(quantity, id);
     }
 
     @GetMapping("/cart/{id}")
-    @CrossOrigin(origins = "https://8081-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+   @CrossOrigin(origins = "http://localhost:4200/")
     public List<CartModel> showCart(@PathVariable("id") Long id) {
         return cartService.showCart(id);
     }
 
     @DeleteMapping("/cart/{id}")
-    @CrossOrigin(origins = "https://8081-eadbffafeaafedcebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+   @CrossOrigin(origins = "http://localhost:4200/")
     public String cartItemDelete(@PathVariable("id") Long id) {
         // Todo: change to del specific user's cart item only not all the cart items which have id
         return cartService.deleteCartItem(id);

@@ -9,7 +9,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
@@ -19,6 +19,13 @@ import { ProductdetailsComponent } from './home/productdetails/productdetails.co
 import { ProductsComponent } from './home/products/products.component';
 import { CartItemsComponent } from './home/cart-items/cart-items.component';
 import { OrdersComponent } from './home/orders/orders.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -35,16 +42,27 @@ import { OrdersComponent } from './home/orders/orders.component';
     ProductdetailsComponent,
     ProductsComponent,
     CartItemsComponent,
-    OrdersComponent
+    OrdersComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,{
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    },
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
