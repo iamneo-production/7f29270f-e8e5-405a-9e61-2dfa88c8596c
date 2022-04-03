@@ -17,29 +17,28 @@ public class CartServiceImplementation implements CartService {
     private CartRepository cartRepository;
 
     @Override
-    public CartModel addToCart(int quantity, Long id) {
+    public CartModel addToCart(int quantity,String username, Long id) {
         ProductModel product = productService.getProductById(id);
         if(product == null) {
             return null;
         }
-
         CartModel cartItem = new CartModel();
         cartItem.setProductName(product.getProductName());
         cartItem.setQuantity(quantity);
         cartItem.setPrice(quantity * product.getPrice());
-        cartItem.setUserId(2L);
+        cartItem.setUserId(username);
 
         return cartRepository.save(cartItem);
     }
 
     @Override
-    public List<CartModel> showCart(Long id) {
+    public List<CartModel> showCart(String id) {
         return cartRepository.findByUserId(id);
     }
 
     @Override
-    public String deleteCartItem(Long id) {
-        cartRepository.deleteById(id);
+    public String deleteCartItem(Long id, String username) {
+        cartRepository.deleteCartItemByUserId(id,username);
         return "Item " + id + " deleted successfully";
     }
 }

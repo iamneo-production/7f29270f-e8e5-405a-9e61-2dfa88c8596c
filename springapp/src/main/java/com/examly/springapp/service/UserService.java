@@ -2,7 +2,7 @@ package com.examly.springapp.service;
 
 
 import com.examly.springapp.model.RoleModel;
-import com.examly.springapp.model.User;
+import com.examly.springapp.model.UserModel;
 import com.examly.springapp.repository.RoleRepository;
 import com.examly.springapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class UserService {
         userRoleModel.setRoleDescription("Default role for newly created record");
         roleRepository.save(userRoleModel);
 
-        User adminUser = new User();
+        UserModel adminUser = new UserModel();
         adminUser.setUsername("admin@gmail.com");
         adminUser.setPassword(getEncodedPassword("admin"));
         adminUser.setName("admin");
@@ -48,7 +48,7 @@ public class UserService {
 
     }
 
-    public User saveUser(User user) {
+    public UserModel saveUser(UserModel user) {
         RoleModel roleModel = roleRepository.findById("User").get();
         Set<RoleModel> userRoleModels = new HashSet<>();
         userRoleModels.add(roleModel);
@@ -62,7 +62,7 @@ public class UserService {
         return passwordEncoder.encode(password);
     }
 
-    public User fetchUserByUsername(String username) {
+    public UserModel fetchUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 

@@ -14,12 +14,12 @@ public class CartModel {
     private String ProductName;
     private int quantity;
     private double price;
-    private Long userId;
+    private String userId;
 
     public CartModel() {
     }
 
-    public CartModel(Long userId, Long cartItemID, String productName, int quantity, double price) {
+    public CartModel(String userId, Long cartItemID, String productName, int quantity, double price) {
         this.userId = userId;
     	this.cartItemID = cartItemID;
         ProductName = productName;
@@ -28,11 +28,11 @@ public class CartModel {
     }
 
     
-    public void setUserId(Long userid) {
+    public void setUserId(String userid) {
     	this.userId=userid;
     }
 
-    public Long getUserId()
+    public String getUserId()
     {
     	return userId;
     }

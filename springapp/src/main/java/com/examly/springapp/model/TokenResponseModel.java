@@ -3,19 +3,19 @@ package com.examly.springapp.model;
 
 public class TokenResponseModel {
 
-    private User user;
+    private UserModel user;
     private String jwtToken;
 
-    public TokenResponseModel(User user, String jwtToken) {
+    public TokenResponseModel(UserModel user, String jwtToken) {
         this.user = user;
         this.jwtToken = jwtToken;
     }
 
-    public User getUser() {
+    public UserModel getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserModel user) {
         this.user = user;
     }
 

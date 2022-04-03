@@ -7,11 +7,11 @@ import com.examly.springapp.model.CartModel;
 import java.util.List;
 
 public interface CartService {
-    CartModel addToCart(int quantity, Long id);
+    CartModel addToCart(int quantity,String username, Long id);
     
-    List<CartModel> showCart(Long id);
+    List<CartModel> showCart(String id);
 
-	String deleteCartItem(Long id);
+	String deleteCartItem(Long id, String username);
 }
 
 

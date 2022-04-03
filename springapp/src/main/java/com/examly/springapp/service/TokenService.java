@@ -2,7 +2,7 @@ package com.examly.springapp.service;
 
 import com.examly.springapp.model.LoginModel;
 import com.examly.springapp.model.TokenResponseModel;
-import com.examly.springapp.model.User;
+import com.examly.springapp.model.UserModel;
 import com.examly.springapp.repository.UserRepository;
 import com.examly.springapp.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,13 +39,13 @@ public class TokenService implements UserDetailsService {
         UserDetails userDetails = loadUserByUsername(username);
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
 
-        User user = userRepository.findById(username).get();
+        UserModel user = userRepository.findById(username).get();
         return new TokenResponseModel(user, newGeneratedToken);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findById(username).get();
+        UserModel user = userRepository.findById(username).get();
 
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(
@@ -58,7 +58,7 @@ public class TokenService implements UserDetailsService {
         }
     }
 
-    private Set getAuthority(User user) {
+    private Set getAuthority(UserModel user) {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
         user.getRole().forEach(role -> {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
