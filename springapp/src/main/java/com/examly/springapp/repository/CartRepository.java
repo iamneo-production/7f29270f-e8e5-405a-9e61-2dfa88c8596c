@@ -13,6 +13,5 @@ public interface CartRepository extends JpaRepository<CartModel, Long> {
     
     public List<CartModel> findByUserId(String id);
 
-    @Query("delete from CartModel c where c.cartItemID:=cartItemId and c.userId:=username")
-    public void deleteCartItemByUserId(Long cartItemId, String username);
+    public void deleteByCartItemIDAndUserId(Long cartItemId, String username);
 }

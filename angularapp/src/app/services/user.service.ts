@@ -16,13 +16,13 @@ export class UserService {
     private userAuthService: UserAuthService) { }
 
   public registerUserFromRemote(user:User):Observable<any>{
-    return  this.http.post<any>("http://localhost:8080/saveUser",user,{headers:this.requestHeader});//Doubt
+    return  this.http.post<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/saveUser",user,{headers:this.requestHeader});//Doubt
     }
     public loginUserFromRemote(user:User):Observable<any>{
-      return  this.http.post<any>("http://localhost:8080/login",user,{headers:this.requestHeader})
+      return  this.http.post<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/login",user,{headers:this.requestHeader})
       }
       public fetchUserByUsername(username:String):Observable<any>{
-        return  this.http.post<any>("http://localhost:8080/user/"+username,{headers:this.requestHeader});//Doubt
+        return  this.http.post<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/user/"+username,{headers:this.requestHeader});//Doubt
         }
       public roleMatch(allowedRoles:any): boolean {
         let isMatch = false;

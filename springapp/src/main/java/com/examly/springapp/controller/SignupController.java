@@ -21,7 +21,7 @@ public class SignupController {
     }
 
     @PostMapping({"/saveUser"})
-    @CrossOrigin(origins = "http://localhost:4200/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public UserModel saveUser(@RequestBody UserModel user)throws Exception {
         String tempUsername=user.getUsername();
         if(tempUsername !=null && !" ".equals(tempUsername)){
@@ -36,14 +36,14 @@ public class SignupController {
     }
 
     @GetMapping({"/forAdmin"})
-    @CrossOrigin(origins = "http://localhost:4200/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     @PreAuthorize("hasRole('Admin')")
     public String forAdmin(){
         return "This URL is only accessible to the admin";
     }
 
     @GetMapping({"/forUser"})
-    @CrossOrigin(origins = "http://localhost:4200/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     @PreAuthorize("hasRole('User')")
     public String forUser(){
         return "This URL is only accessible to the user";
@@ -51,7 +51,7 @@ public class SignupController {
 
 
     @GetMapping("/user/{id}")
-    @CrossOrigin(origins = "http://localhost:4200/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public UserModel fetchById(@PathVariable("id") String username) {
         return userService.fetchUserByUsername(username);
     }

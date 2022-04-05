@@ -13,7 +13,7 @@ export class UserAuthService {
   public setUser(user:String){
     localStorage.setItem("user",JSON.stringify(user));
   }
-  public getUser(user:String){
+  public getUser(){
     return JSON.parse(localStorage.getItem('user')||"");
   }
   public getRoles():[]{

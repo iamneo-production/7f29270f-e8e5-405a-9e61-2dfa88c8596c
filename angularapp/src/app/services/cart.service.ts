@@ -10,16 +10,16 @@ export class CartService {
 
   constructor(private _http: HttpClient) { }
 
-  fetchCartItems(id: number): Observable<any> {
-    return this._http.get<any>("http://localhost:8080/cart/" + id)
+  fetchCartItems(id: string): Observable<any> {
+    return this._http.get<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/cart/" + id)
   }
 
-  deleteCartItem(id: number): Observable<any> {
+  deleteCartItem(username: string, id: number): Observable<any> {
     console.log(id)
-    return this._http.delete<any>("http://localhost:8080/cart/" + id)
+    return this._http.delete<any>(`https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/cart/${username}/${id}`)
   }
 
-  addCartItem(quantity:number, id: number): Observable<any> {
-    return this._http.post<any>(`http://localhost:8080/home/${id}`, quantity)
+  addCartItem(username: string, quantity:number, id: number): Observable<any> {
+    return this._http.post<any>(`https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/home/${id}`, {username, quantity})
   }
 }

@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/Product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
+import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
   selector: 'app-productdetails',
@@ -16,10 +17,12 @@ export class ProductdetailsComponent implements OnInit {
 
   product = new Product()
   id!: number
+  userId!: string
 
-  constructor(private _router: Router, private _pservice: ProductService, private _cservice: CartService,private _oservice: OrderService, private _activatedRoute: ActivatedRoute) { }
+  constructor(private _router: Router, private _pservice: ProductService, private _uasevice: UserAuthService, private _cservice: CartService,private _oservice: OrderService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.userId = this._uasevice.getUser()
     this.id = Number(this._activatedRoute.snapshot.paramMap.get('id'))
     this._pservice.fetchProductById(this.id).subscribe(
       data => {
@@ -31,14 +34,14 @@ export class ProductdetailsComponent implements OnInit {
   }
 
   addToCart() {
-    this._cservice.addCartItem(this.product.quantity, this.id).subscribe(
+    this._cservice.addCartItem(this.userId, this.product.quantity, this.id).subscribe(
       data => {
         console.log("Product " + this.id + " is added to cart")
       },
       error => console.log(error)
     )
 
-    this._router.navigate(["/cart/2"])
+    this._router.navigate(["/cart/" + this.userId])
     .then(() => {
       window.location.reload();
     });

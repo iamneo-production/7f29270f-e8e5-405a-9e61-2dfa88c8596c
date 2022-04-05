@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 8081 --disable-host-check --host=0.0.0.0",
     "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -31,7 +31,6 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.5",
     "@angular/cli": "~13.2.5",
-    
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",

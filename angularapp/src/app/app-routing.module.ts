@@ -16,9 +16,20 @@ import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'login', component: LoginComponent },
+
+  { path: '', 
+    component: HomeComponent,
+    canActivate:[AuthGuard], 
+    data:{roles:['User']},
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: "home", component: HomePageComponent ,canActivate:[AuthGuard], data:{roles:['User']}},
+      { path: "product/:id", component: ProductdetailsComponent,canActivate:[AuthGuard], data:{roles:['User']} },
+      { path: "cart/:id", component: CartItemsComponent ,canActivate:[AuthGuard], data:{roles:['User']}},
+      { path: 'myorders', component: OrdersComponent,canActivate:[AuthGuard], data:{roles:['User']}},
+    ]
+  },
   {
     path: "admin",
     component: AdminComponent,canActivate:[AuthGuard], data:{roles:['Admin']},
@@ -27,14 +38,7 @@ const routes: Routes = [
       { path: "addProduct", component: AddproductComponent ,canActivate:[AuthGuard], data:{roles:['Admin']}},
       { path: "productEdit/:id", component: ProductEditComponent ,canActivate:[AuthGuard], data:{roles:['Admin']}}
     ]
-  },
-  { path: "home", component: HomePageComponent ,canActivate:[AuthGuard], data:{roles:['User']}},
-  { path: "product/:id", component: ProductdetailsComponent,canActivate:[AuthGuard], data:{roles:['User']} },
-  { path: "cart/:id", component: CartItemsComponent ,canActivate:[AuthGuard], data:{roles:['User']}},
-  { path: 'myorders', component: OrdersComponent,canActivate:[AuthGuard], data:{roles:['User']}}
- 
-
-
+  }
 ];
 
 @NgModule({

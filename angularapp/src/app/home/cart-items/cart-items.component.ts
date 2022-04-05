@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartItem } from 'src/app/model/CartItem';
 import { CartService } from 'src/app/services/cart.service';
+import { UserAuthService } from '../../services/user-auth.service';
 
 @Component({
   selector: 'app-cart-items',
@@ -11,12 +12,13 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartItemsComponent implements OnInit {
 
   _cartItems!: CartItem[]
+  userId!: string
 
-  constructor(private _csevice: CartService, private _router: Router) { }
+  constructor(private _csevice: CartService, private _uasevice: UserAuthService, private _router: Router) { }
 
   ngOnInit(): void {
-
-    this._csevice.fetchCartItems(2).subscribe(
+    this.userId = this._uasevice.getUser()
+    this._csevice.fetchCartItems(this.userId).subscribe(
       data => {
         this._cartItems = data;
         console.log("Cart items recieved")
@@ -27,8 +29,7 @@ export class CartItemsComponent implements OnInit {
   }
 
   deleteCartItem(id: number) {
-    console.log(id)
-    this._csevice.deleteCartItem(id).subscribe(
+    this._csevice.deleteCartItem(this.userId, id).subscribe(
       data => {
         console.log(data)
       },
