@@ -9,13 +9,9 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class AdminNavComponent implements OnInit {
 
-  username !: string
-  isLoggedin: boolean = false
   constructor(private _uaservice: UserAuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.username = this._uaservice.getUser()
-    this.isLoggedin = (this.username != "")
   }
 
   logOut(): void {

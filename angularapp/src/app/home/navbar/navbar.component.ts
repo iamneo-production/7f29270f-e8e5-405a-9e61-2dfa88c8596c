@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.username = this._uaservice.getUser()
-    this.isLoggedin = (this.username != "")
+    this.isLoggedin = (this.username != "" && this.username !="admin@gmail.com")
   }
 
   logOut(): void {
