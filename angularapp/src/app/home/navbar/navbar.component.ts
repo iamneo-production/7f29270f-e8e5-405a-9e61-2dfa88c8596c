@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
@@ -9,10 +10,21 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 export class NavbarComponent implements OnInit {
 
   username !: string
-  constructor(private _uaservice: UserAuthService) { }
+  isLoggedin: boolean = false
+  constructor(private _uaservice: UserAuthService, private router: Router,) { }
 
   ngOnInit(): void {
     this.username = this._uaservice.getUser()
+    this.isLoggedin = (this.username != "")
   }
 
+  logOut(): void {
+    this._uaservice.clear()
+    this.router.navigate(['/login'])
+    .then(() => {
+      console.log("Logged out")
+      window.location.reload();
+    })
+  }
+  
 }

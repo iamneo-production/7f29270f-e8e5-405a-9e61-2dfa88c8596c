@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
    
   }
   loginUser() {
- 
     this.userService.loginUserFromRemote(this.user).subscribe(
       (response) => {
         console.log(response.jwtToken);
@@ -36,7 +35,10 @@ export class LoginComponent implements OnInit {
        const role= response.user.role[0].roleName;
        console.log(role);
        if(role==='User'){
-         this.router.navigate(['/home']);
+         this.router.navigate(['/home'])
+         .then(() => {
+          window.location.reload();
+        });
        }
        else{
         this.router.navigate(['/admin']);
@@ -56,6 +58,7 @@ export class LoginComponent implements OnInit {
       this.user.active=true;
      }
   }
+
   public logout(){
     this.user.active=false;
     this.router.navigate(['/login'])
