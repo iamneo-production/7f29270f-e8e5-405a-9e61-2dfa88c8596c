@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse spread-nav" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul *ngIf="isLoggedin" class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/admin">
                         <span class="material-icons">
@@ -24,9 +24,9 @@
                     </a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
+            <ul *ngIf="isLoggedin" class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" routerLink="/login">Logout</a>
+                <a class="nav-link" role="button" (click)="logOut()">Logout</a>
               </li>
             </ul>
         </div>

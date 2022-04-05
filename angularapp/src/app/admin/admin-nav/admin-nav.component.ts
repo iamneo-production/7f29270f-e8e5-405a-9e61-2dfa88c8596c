@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
   selector: 'app-admin-nav',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavComponent implements OnInit {
 
-  constructor() { }
+  username !: string
+  isLoggedin: boolean = false
+  constructor(private _uaservice: UserAuthService, private router: Router) { }
 
   ngOnInit(): void {
+    this.username = this._uaservice.getUser()
+    this.isLoggedin = (this.username != "")
+  }
+
+  logOut(): void {
+    this._uaservice.clear()
+    this.router.navigate(['/login'])
+    .then(() => {
+      console.log("Logged out")
+      window.location.reload();
+    })
   }
 
 }
