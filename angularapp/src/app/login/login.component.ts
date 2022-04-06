@@ -19,7 +19,10 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private UserAuthService:UserAuthService
     
-  ) {}
+  ) {
+
+    this.UserAuthService.clear();
+  }
 
   ngOnInit(): void {
    
