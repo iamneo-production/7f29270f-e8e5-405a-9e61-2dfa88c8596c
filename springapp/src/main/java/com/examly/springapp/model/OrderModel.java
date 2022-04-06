@@ -14,14 +14,14 @@ public class OrderModel {
     private String ProductName;
     private int quantity;
     private double price;
-    private Long userId;
+    private String userId;
     private double Totalprice;
     public String Status;
 
     public OrderModel() {
     }
 
-    public OrderModel(Long userId, Long OrderID, String productName, int quantity, double price,double Totalprice,String Status) {
+    public OrderModel(String userId, Long OrderID, String productName, int quantity, double price,double Totalprice,String Status) {
         this.userId = userId;
     	this.OrderID = OrderID;
         ProductName = productName;
@@ -32,11 +32,11 @@ public class OrderModel {
     }
 
     
-    public void setUserId(Long userid) {
+    public void setUserId(String userid) {
     	this.userId=userid;
     }
 
-    public Long getUserId()
+    public String getUserId()
     {
     	return userId;
     }

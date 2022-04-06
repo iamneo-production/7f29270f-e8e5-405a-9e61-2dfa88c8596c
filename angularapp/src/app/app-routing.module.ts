@@ -24,7 +24,7 @@ const routes: Routes = [
       { path: "home", component: HomePageComponent ,canActivate:[AuthGuard], data:{roles:['User']}},
       { path: "product/:id", component: ProductdetailsComponent,canActivate:[AuthGuard], data:{roles:['User']} },
       { path: "cart/:id", component: CartItemsComponent ,canActivate:[AuthGuard], data:{roles:['User']}},
-      { path: 'myorders', component: OrdersComponent,canActivate:[AuthGuard], data:{roles:['User']}},
+      { path: 'myorders/:id', component: OrdersComponent,canActivate:[AuthGuard], data:{roles:['User']}},
     ]
   },
   {

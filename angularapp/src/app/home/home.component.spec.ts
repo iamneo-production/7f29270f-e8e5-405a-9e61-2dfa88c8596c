@@ -8,7 +8,7 @@ describe('HomeComponent', () => {
   let loginService:any,router:any;
 
   beforeEach(() => {
-    component = new HomeComponent(loginService,router);
+    component = new HomeComponent();
   });
 
   it('test_case15', () => {

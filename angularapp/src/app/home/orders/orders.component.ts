@@ -2,6 +2,7 @@ import { OrderService } from './../../services/order.service';
 import { Orders } from './../../model/Orders';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
   selector: 'app-orders',
@@ -10,14 +11,15 @@ import { Router } from '@angular/router';
 })
 export class OrdersComponent implements OnInit {
   _order!: Orders[]
-  constructor(private _osevice: OrderService, private _router: Router) { }
+  userId!: string
+  constructor(private _osevice: OrderService,private _uasevice: UserAuthService, private _router: Router) { }
 
   ngOnInit(): void {
-    this._osevice.fetchOrders(2).subscribe(
+    this.userId = this._uasevice.getUser()
+    this._osevice.fetchOrders(this.userId).subscribe(
       data => {
         this._order = data;
         console.log("Order items recieved")
-        console.log("")
       },
       error => console.log(error)
     )

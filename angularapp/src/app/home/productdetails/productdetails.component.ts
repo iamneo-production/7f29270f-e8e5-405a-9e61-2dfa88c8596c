@@ -47,13 +47,13 @@ export class ProductdetailsComponent implements OnInit {
     });
   }
   PlaceOrder(){
-    this._oservice.placeOrder(this.product.quantity,this.id).subscribe(
+    this._oservice.placeOrder(this.userId,this.product.quantity,this.id).subscribe(
       data =>{
         console.log("Product " + this.id + " is added to orders")
       },
       error => console.log(error)
     )
-    this._router.navigate(["/myorders"])
+    this._router.navigate(["/myorders/" + this.userId])
     .then(() => {
       window.location.reload();
     });

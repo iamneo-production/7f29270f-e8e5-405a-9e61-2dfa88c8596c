@@ -26,3 +26,11 @@
  tbody{
      background-color: rgb(241,242,251);
  }
+ .emptyorders {
+  display: flex; 
+  justify-content: center;
+  text-align: center;
+  margin-top: 10%;
+  font-size: x-large;
+  color: #777777;
+}
