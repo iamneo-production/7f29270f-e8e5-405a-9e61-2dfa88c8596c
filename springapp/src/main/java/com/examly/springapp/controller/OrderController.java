@@ -1,5 +1,6 @@
 package com.examly.springapp.controller;
 import com.examly.springapp.model.OrderModel;
+import com.examly.springapp.request.OrderRequest;
 import com.examly.springapp.service.OrderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +16,20 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/product/{id}")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
-    public OrderModel placeOrder(@RequestBody int quantity, @PathVariable Long id) {
-        return orderService.placeOrder(quantity, id);
+    @CrossOrigin(origins = "http://localhost:4200/")
+    public OrderModel placeOrder(@RequestBody OrderRequest orderRequest, @PathVariable Long id) {
+        return orderService.placeOrder(orderRequest.getQuantity(),orderRequest.getUsername(), id);
     }
 
     @GetMapping("/myorders/{id}")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
-    public List<OrderModel> showOrders(@PathVariable("id") Long id) {
+    @CrossOrigin(origins = "http://localhost:4200/")
+    public List<OrderModel> showOrders(@PathVariable("id") String id) {
         return orderService.showOrders(id);
     }
-
+    @PostMapping("/saveOrder/{id}")
+    @CrossOrigin(origins = "http://localhost:4200/")
+    public List<OrderModel> saveProduct(@PathVariable("id") String id) {
+        return orderService.saveProduct(id);
+    }
 }
 

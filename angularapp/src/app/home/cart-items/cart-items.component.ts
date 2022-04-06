@@ -1,3 +1,4 @@
+import { OrderService } from './../../services/order.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartItem } from 'src/app/model/CartItem';
@@ -14,7 +15,7 @@ export class CartItemsComponent implements OnInit {
   _cartItems!: CartItem[]
   userId!: string
 
-  constructor(private _csevice: CartService, private _uasevice: UserAuthService, private _router: Router) { }
+  constructor(private _csevice: CartService,private _oservice: OrderService, private _uasevice: UserAuthService, private _router: Router) { }
 
   ngOnInit(): void {
     this.userId = this._uasevice.getUser()
@@ -37,6 +38,16 @@ export class CartItemsComponent implements OnInit {
     )
 
     location.reload(); 
+  }
+  saveProduct(uid: string) {
+    console.log(uid)
+    this._oservice.saveProduct(uid).subscribe(
+      data => {
+        console.log(data)
+      },
+      error => console.log(error)
+    )
+    this._router.navigate(["/myorders/"+uid])
   }
 
 }

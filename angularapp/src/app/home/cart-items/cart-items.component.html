@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="_cartItems.length;else elseBlock;"class="container">
     <table class="table mt-5">
         <thead class="thead-dark">
           <tr>
@@ -17,4 +17,6 @@
           </tr>
         </tbody>
     </table>
+    <span class="final"><button class="btn btn-primary"(click)="saveProduct(userId)">Place Order</button></span>
 </div>
+<ng-template #elseBlock><span class = "emptycart">Your Cart is Empty!</span></ng-template>

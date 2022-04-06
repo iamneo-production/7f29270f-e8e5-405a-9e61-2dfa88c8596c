@@ -16,13 +16,13 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("/products")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public ProductModel productSave(@RequestBody ProductModel product) {
         return productService.saveProduct(product);
     }
 
     @GetMapping("/products")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public List<ProductModel> getProduct() {
         return productService.getAllProducts();
     }
