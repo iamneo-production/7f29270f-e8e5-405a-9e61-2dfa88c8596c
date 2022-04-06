@@ -7,6 +7,8 @@ import com.examly.springapp.repository.OrderRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.awt.Window;
 import java.util.List;
 
 @Service
@@ -52,7 +54,7 @@ public class OrderServiceImplementation implements OrderService {
          OrderModel order = new OrderModel();
          for(CartModel items : cartRepository.findByUserId(username)) {
          	//placeOrder(items.getQuantity(),items.getCartItemID());
-              order.setOrderID(2L);
+        	  order.setOrderID(2L);
               order.setProductName(items.getProductName());
               order.setQuantity(items.getQuantity());
               order.setPrice(items.getPrice());
@@ -60,9 +62,9 @@ public class OrderServiceImplementation implements OrderService {
               order.setUserId(username);
               order.setStatus("Order Placed successfully");
               orderRepository.save(order);
-              cartRepository.deleteByCartItemIDAndUserId(username,items.getCartItemID());
+              cartRepository.deleteById(items.getCartItemID());
          }
-         cartRepository.deleteInBatch(cartRepository.findByUserId(username));
+         
          return orderRepository.findByUserId(username);
 
      
