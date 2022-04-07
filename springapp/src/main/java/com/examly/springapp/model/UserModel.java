@@ -1,5 +1,4 @@
 package com.examly.springapp.model;
-
 import javax.persistence.*;
 
 import java.util.List;
@@ -14,9 +13,6 @@ public class UserModel {
     private String mobilenumber;
     private String password;
     private boolean active;
-    private Set<RoleModel> role;
-    private CartModel cart;
-    private List<OrderModel> ordersList;
 
 
 
@@ -71,27 +67,13 @@ public class UserModel {
     }
 
     public Set<RoleModel> getRole() {
-        return role;
+        return roleModel;
     }
 
     public void setRole(Set<RoleModel> role) {
-        this.role = role;
+        this.roleModel = role;
     }
 
-	public CartModel getCart() {
-		return cart;
-	}
-
-	public void setCart(CartModel cart) {
-		this.cart = cart;
-	}
-
-	public List<OrderModel> getOrdersList() {
-		return ordersList;
-	}
-
-	public void setOrdersList(List<OrderModel> ordersList) {
-		this.ordersList = ordersList;
-	}
+	
 }
 
