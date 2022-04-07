@@ -13,6 +13,7 @@ import { OrdersComponent } from './home/orders/orders.component';
 import { ProductdetailsComponent } from './home/productdetails/productdetails.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserprofileComponent } from './home/userprofile/userprofile.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: "product/:id", component: ProductdetailsComponent,canActivate:[AuthGuard], data:{roles:['User']} },
       { path: "cart/:id", component: CartItemsComponent ,canActivate:[AuthGuard], data:{roles:['User']}},
       { path: 'myorders/:id', component: OrdersComponent,canActivate:[AuthGuard], data:{roles:['User']}},
+      {path : 'user/:id',component:UserprofileComponent,canActivate:[AuthGuard], data:{roles:['User']}},
     ]
   },
   {
