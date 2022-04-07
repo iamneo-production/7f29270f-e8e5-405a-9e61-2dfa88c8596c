@@ -23,6 +23,11 @@
                         MyOrder
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user/{{this.username}}">
+                        MyProfile
+                    </a>
+                </li>
             </ul>
     
             <ul *ngIf="isLoggedin" class="navbar-nav">

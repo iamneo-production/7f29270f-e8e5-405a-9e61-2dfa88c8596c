@@ -27,6 +27,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserService } from './services/user.service';
 import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { UserprofileComponent } from './home/userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OrderlistComponent } from './admin/orderlist/orderlist.component';
     OrdersComponent,
     SignupComponent,
     LoginComponent,
-    OrderlistComponent
+    OrderlistComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
