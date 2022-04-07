@@ -31,5 +31,12 @@ public class OrderController {
     public List<OrderModel> saveProduct(@PathVariable("id") String id) {
         return orderService.saveProduct(id);
     }
+    
+    @GetMapping("/orders/")
+    @CrossOrigin(origins = "http://localhost:4200/")
+    public List<OrderModel> getUserProducts() {
+        return orderService.getUserProducts();
+    }
+    
 }
 

@@ -69,5 +69,11 @@ public class OrderServiceImplementation implements OrderService {
 
      
      }
+    
+    @Override
+    public List<OrderModel> getUserProducts() {
+    	System.out.print((orderRepository.findAll()).toString());
+    	return orderRepository.findAll();
+    }
 
 }

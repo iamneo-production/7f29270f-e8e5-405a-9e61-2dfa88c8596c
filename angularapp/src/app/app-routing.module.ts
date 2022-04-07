@@ -1,3 +1,4 @@
+import { OrderlistComponent } from './admin/orderlist/orderlist.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddproductComponent } from './admin/addproduct/addproduct.component';
@@ -35,7 +36,8 @@ const routes: Routes = [
     children: [
       { path: "", component: DashboardComponent ,canActivate:[AuthGuard], data:{roles:['Admin']}},
       { path: "addProduct", component: AddproductComponent ,canActivate:[AuthGuard], data:{roles:['Admin']}},
-      { path: "productEdit/:id", component: ProductEditComponent ,canActivate:[AuthGuard], data:{roles:['Admin']}}
+      { path: "productEdit/:id", component: ProductEditComponent ,canActivate:[AuthGuard], data:{roles:['Admin']}},
+      { path: "orders", component: OrderlistComponent ,canActivate:[AuthGuard], data:{roles:['Admin']}},
     ]
   }
 ];

@@ -26,6 +26,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserService } from './services/user.service';
+import { OrderlistComponent } from './admin/orderlist/orderlist.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UserService } from './services/user.service';
     CartItemsComponent,
     OrdersComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    OrderlistComponent
   ],
   imports: [
     BrowserModule,

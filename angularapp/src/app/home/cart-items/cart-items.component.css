@@ -1,24 +1,4 @@
-/* thead {
-    background-color: #FF9F45 !important;
-    color: white !important;
-}
 
-th, td {
-    text-align: center;
-}
-
-.final{
-    float: right;
-}
-
-.emptycart {
-    display: flex; 
-    justify-content: center;
-    text-align: center;
-    margin-top: 10%;
-    font-size: x-large;
-    color: #777777;
-} */
 .center{
     width: 100%;
  }
