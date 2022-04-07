@@ -10,6 +10,6 @@ public interface OrderService {
 
     List<OrderModel> saveProduct(String id);
     
-    List<OrderModel> getUserProducts();
+    List<OrderModel> getUserOrders();
 
 }

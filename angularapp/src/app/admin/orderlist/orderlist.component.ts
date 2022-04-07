@@ -20,6 +20,7 @@ export class OrderlistComponent implements OnInit {
     this._osevice.getUserProducts().subscribe(
       data => {
         this._adminorders = data;
+        console.log(data)
         console.log("Admin orders received")
       },
       error => console.log(error)

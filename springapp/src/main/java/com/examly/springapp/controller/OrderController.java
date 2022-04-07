@@ -32,10 +32,10 @@ public class OrderController {
         return orderService.saveProduct(id);
     }
     
-    @GetMapping("/admin/orders/")
+    @GetMapping("/admin/orders")
     @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public List<OrderModel> getUserProducts() {
-        return orderService.getUserProducts();
+        return orderService.getUserOrders();
     }
     
 }

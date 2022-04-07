@@ -18,6 +18,6 @@ export class OrderService {
     return this._http.post<any>(`https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/saveOrder/${uid}`,{uid})
   }
   getUserProducts(): Observable<any>{
-    return this._http.get<any>("http://localhost:8080/admin/orders")
+    return this._http.get<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/admin/orders")
   }
 }

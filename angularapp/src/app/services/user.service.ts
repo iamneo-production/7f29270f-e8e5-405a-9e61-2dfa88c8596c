@@ -22,7 +22,7 @@ export class UserService {
       return  this.http.post<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/login",user,{headers:this.requestHeader})
       }
       public fetchUserByUsername(username:String):Observable<any>{
-        return  this.http.post<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/user/"+username,{headers:this.requestHeader});//Doubt
+        return  this.http.get<any>("https://8080-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/user/"+username,{headers:this.requestHeader});//Doubt
         }
       public roleMatch(allowedRoles:any): boolean {
         let isMatch = false;

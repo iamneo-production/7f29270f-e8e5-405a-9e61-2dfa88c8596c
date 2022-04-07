@@ -1,5 +1,5 @@
 export class Orders {
-    OrderID!: number
+    orderID!: number
     quantity!: number
     price!: number 
     userId!: number
