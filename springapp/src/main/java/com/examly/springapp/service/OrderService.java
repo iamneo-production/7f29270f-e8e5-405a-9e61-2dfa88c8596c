@@ -9,5 +9,7 @@ public interface OrderService {
     List<OrderModel> showOrders(String id);
 
     List<OrderModel> saveProduct(String id);
+    
+    List<OrderModel> getUserProducts();
 
 }

@@ -31,5 +31,12 @@ public class OrderController {
     public List<OrderModel> saveProduct(@PathVariable("id") String id) {
         return orderService.saveProduct(id);
     }
+    
+    @GetMapping("/admin/orders/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
+    public List<OrderModel> getUserProducts() {
+        return orderService.getUserProducts();
+    }
+    
 }
 

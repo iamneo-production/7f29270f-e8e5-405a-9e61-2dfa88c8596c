@@ -17,8 +17,8 @@ import { CorouselComponent } from './home/corousel/corousel.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { ProductdetailsComponent } from './home/productdetails/productdetails.component';
 import { ProductsComponent } from './home/products/products.component';
-import { CartItemsComponent } from './home/cart-items/cart-items.component';
-import { OrdersComponent } from './home/orders/orders.component';
+import { CartItemsComponent } from './cart/cart-items.component';
+import { OrdersComponent } from './user-order/orders.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +26,8 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserService } from './services/user.service';
+import { OrderlistComponent } from './admin/orderlist/orderlist.component';
+import { UserprofileComponent } from './home/userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { UserService } from './services/user.service';
     CartItemsComponent,
     OrdersComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    OrderlistComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,

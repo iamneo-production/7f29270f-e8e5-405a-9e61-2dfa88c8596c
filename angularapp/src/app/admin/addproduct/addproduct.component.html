@@ -5,16 +5,16 @@
             <img src="../../../assets/images/edit_product_img.jpg" height="250">
         </div>
 
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12"id="addInstrumentBody">
             <h3 class="title"> ADD A NEW PRODUCT </h3>
             <form #addProductForm="ngForm" (ngSubmit)="addProduct()">
-                <input type="text" required class="form-control" id="name" placeholder="Product Name" name="productName" [(ngModel)]="product.productName">
-                <input type="number" required class="form-control" id="price" placeholder="Product Price" name="price" [(ngModel)]="product.price">
-                <textarea class="form-control" required id="description" name="description" rows="3" placeholder="Product Description" [(ngModel)]="product.description"></textarea>
-                <input type="url" required class="form-control" id="imageUrl" placeholder="Image URL" name="imageUrl" [(ngModel)]="product.imageUrl">
-                <input type="number" required class="form-control" id="quantity" placeholder="Product Quamtity" name="quantity" [(ngModel)]="product.quantity">
+                <input type="text" required class="form-control"  placeholder="Product Name" name="productName"id="instrumentName" [(ngModel)]="product.productName">
+                <input type="number" required class="form-control" placeholder="Product Price" name="price"id="instrumentPrice" [(ngModel)]="product.price">
+                <textarea class="form-control" required  name="description"id="instrumentDescription" rows="3" placeholder="Product Description" [(ngModel)]="product.description"></textarea>
+                <input type="url" required class="form-control"  placeholder="Image URL" name="imageUrl"id="instrumentImageURL" [(ngModel)]="product.imageUrl">
+                <input type="number" required class="form-control"  placeholder="Product Quamtity" name="quantity"id="instrumentQuantity" [(ngModel)]="product.quantity">
 
-                <button type="submit" class="btn">Add</button>
+                <button type="submit" class="btn"id="addInstrumentButton">Add</button>
             </form>
         </div>
 

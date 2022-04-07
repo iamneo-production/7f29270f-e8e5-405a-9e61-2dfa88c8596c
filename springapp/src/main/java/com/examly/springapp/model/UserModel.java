@@ -1,6 +1,7 @@
 package com.examly.springapp.model;
-
 import javax.persistence.*;
+
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -69,8 +70,10 @@ public class UserModel {
         return roleModel;
     }
 
-    public void setRole(Set<RoleModel> roleModel) {
-        this.roleModel = roleModel;
+    public void setRole(Set<RoleModel> role) {
+        this.roleModel = role;
     }
+
+	
 }
 
