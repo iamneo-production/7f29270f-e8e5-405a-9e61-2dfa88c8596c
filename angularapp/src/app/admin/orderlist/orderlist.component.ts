@@ -22,7 +22,7 @@ export class OrderlistComponent implements OnInit {
         this._adminorders = data;
         console.log("Admin orders received")
       },
-      error => console.log(error+this._adminorders.length)
+      error => console.log(error)
       
     )
   }

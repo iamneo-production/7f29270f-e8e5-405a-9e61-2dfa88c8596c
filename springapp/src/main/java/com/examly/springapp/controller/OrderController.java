@@ -32,7 +32,7 @@ public class OrderController {
         return orderService.saveProduct(id);
     }
     
-    @GetMapping("/orders/")
+    @GetMapping("/admin/orders/")
     @CrossOrigin(origins = "http://localhost:4200/")
     public List<OrderModel> getUserProducts() {
         return orderService.getUserProducts();
