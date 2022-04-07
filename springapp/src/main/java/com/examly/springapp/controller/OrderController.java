@@ -16,18 +16,18 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/product/{id}")
-    @CrossOrigin(origins = "http://localhost:4200/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public OrderModel placeOrder(@RequestBody OrderRequest orderRequest, @PathVariable Long id) {
         return orderService.placeOrder(orderRequest.getQuantity(),orderRequest.getUsername(), id);
     }
 
     @GetMapping("/myorders/{id}")
-    @CrossOrigin(origins = "http://localhost:4200/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public List<OrderModel> showOrders(@PathVariable("id") String id) {
         return orderService.showOrders(id);
     }
     @PostMapping("/saveOrder/{id}")
-    @CrossOrigin(origins = "http://localhost:4200/")
+    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io/")
     public List<OrderModel> saveProduct(@PathVariable("id") String id) {
         return orderService.saveProduct(id);
     }

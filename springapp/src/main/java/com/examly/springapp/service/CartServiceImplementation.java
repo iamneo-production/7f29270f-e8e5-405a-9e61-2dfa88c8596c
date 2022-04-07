@@ -37,11 +37,9 @@ public class CartServiceImplementation implements CartService {
     }
 
     @Override
-    public String deleteCartItem(String username, Long cartItemId) {
-    	
+    public String deleteCartItem(Long cartItemId) {
         cartRepository.deleteById(cartItemId);
         return "Item " + cartItemId + " deleted successfully";
-        
     }
 }
 

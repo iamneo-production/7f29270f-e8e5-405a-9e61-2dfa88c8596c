@@ -11,7 +11,7 @@ public interface CartService {
     
     List<CartModel> showCart(String id);
 
-	String deleteCartItem(String username,Long cartItemId);
+	String deleteCartItem(Long cartItemId);
 }
 
 

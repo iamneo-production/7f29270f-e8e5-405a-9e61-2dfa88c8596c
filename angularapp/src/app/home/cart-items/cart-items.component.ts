@@ -30,6 +30,7 @@ export class CartItemsComponent implements OnInit {
   }
 
   deleteCartItem(id: number) {
+    console.log(id + " " + this.userId)
     this._csevice.deleteCartItem(this.userId, id).subscribe(
       data => {
         console.log(data)
@@ -48,6 +49,9 @@ export class CartItemsComponent implements OnInit {
       error => console.log(error)
     )
     this._router.navigate(["/myorders/"+uid])
+    .then(() => {
+      window.location.reload();
+    });
   }
 
 }

@@ -20,6 +20,7 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/util/JwtUtil.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/TokenService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/ProductService.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/request/OrderRequest.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/OrderService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/WebSecurityConfiguration.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/request/CartRequest.java
