@@ -18,7 +18,7 @@ export class ProductdetailsComponent implements OnInit {
   product = new Product()
   id!: number
   userId!: string
-
+  
   constructor(private _router: Router, private _pservice: ProductService, private _uasevice: UserAuthService, private _cservice: CartService,private _oservice: OrderService, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
