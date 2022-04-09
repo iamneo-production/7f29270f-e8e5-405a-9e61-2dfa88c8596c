@@ -16,33 +16,33 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("/products")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public ProductModel productSave(@RequestBody ProductModel product) {
         return productService.saveProduct(product);
     }
 
     @GetMapping("/products")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public List<ProductModel> getProduct() {
         return productService.getAllProducts();
     }
 
     @GetMapping("/products/{id}")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public ProductModel productEditData(@PathVariable("id") Long id) {
         return productService.getProductById(id);
     }
 
     @DeleteMapping("/products/{id}")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public String productDelete(@PathVariable("id") Long id) {
         return productService.deleteProduct(id);
     }
 
     @PutMapping("/products")
-    @CrossOrigin(origins = "https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io")
+    @CrossOrigin(origins = "http://localhost:4200/")
     public ProductModel productEditSave(@RequestBody ProductModel data) {
         return productService.editProduct(data);
     }
-//    https://8081-abdcaefccfdaacebccbcdaccaffbdddbad.examlyiopb.examly.io
+//    http://localhost:4200/
 }
